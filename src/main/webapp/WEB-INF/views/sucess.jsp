@@ -14,9 +14,9 @@
 <h1>Thank You</h1>
 <p>Your form has been submitted successfully!</p>
 <h2>Your Form Data</h2>
-<p>Name: ${name }</p>
-<p>Email: ${email }</p>
-<p>Password: ${password }</p>
+<p>Name: ${user.getname()}</p>
+<p>Email: ${user.getEmail()}</p>
+<p>Password: ${user.getPassword()}</p>
 
 </body>
 </html>

@@ -1,7 +1,9 @@
 package controllers;
 
 
+import entities.user;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,7 +37,13 @@ public class Controller {
         return "hello";
     }
 
-    @RequestMapping(path = "/login", method = RequestMethod.POST)
+
+     @RequestMapping(path="login", method = RequestMethod.POST)
+    public String login(@ModelAttribute user user, Model model){
+        model.addAttribute("user", user);
+        return "sucess";}
+
+    /*@RequestMapping(path = "/login", method = RequestMethod.POST)
     public String form(@RequestParam("name") String name,
                        @RequestParam("email") String email,
                        @RequestParam("password") String password,Model model) {
@@ -44,4 +52,5 @@ public class Controller {
         model.addAttribute("password", password);
         return "sucess";
     }
+    */
 }
